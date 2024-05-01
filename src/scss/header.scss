@@ -1,0 +1,50 @@
+$primary-background-color: #0F52BA;
+$primary-color: #FFFFFF;
+$primary-cart-drawer-background-color: #FFFFFF;
+
+.header-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem;
+  background-color: $primary-background-color;
+  color: $primary-color;
+
+  .header-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-container-wrapper-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      .header-container-wrapper-subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        text-transform: capitalize;
+      }
+    }
+
+    .header-container-wrapper-card-drawer {
+      padding: 10px 27px 10px 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      border: 0;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      background-color: $primary-cart-drawer-background-color;
+
+      span {
+        font-size: 1.125rem;
+        font-weight: 700;
+      }
+
+      &:hover {
+        filter: opacity(0.8);
+      }
+    }
+  }
+}
