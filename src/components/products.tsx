@@ -27,7 +27,7 @@ export function Products({ products }: ProductsPropsArray) {
 
   return (
     <>
-      {data.products.map((product: ProductsProps) => (
+      {data?.products?.map((product: ProductsProps) => (
         <div key={product.id} className="product-card-container">
           <div className="product-card-container-wrapper-img">
             <img src={product.photo} alt={product.name} />
