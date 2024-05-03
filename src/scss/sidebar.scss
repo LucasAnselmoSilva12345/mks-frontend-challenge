@@ -1,0 +1,48 @@
+$primary-background-color: #0F52BA;
+$primary-icon-background-color: #000;
+$primary-color: #FFFFFF;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -486px; /* Inicia a barra lateral fora da tela */
+  width: 486px;
+  height: 100vh;
+  background-color: $primary-background-color;
+  transition: right 0.9s ease;
+  box-shadow: -15px 0px 14px -8px rgba(0,0,0,0.1);
+}
+
+.sidebar.open {
+  right: 0; /* Move a barra lateral para a tela */
+}
+
+.sidebar-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.sidebar-cart-drawer-wrapper {
+  padding: 36px 22px 0 47px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h4 {
+    font-size: 28px;
+    font-weight: 700;
+    color: $primary-color;
+  }
+
+  svg {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $primary-icon-background-color;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: opacity(0.8);
+    }
+  }
+}
