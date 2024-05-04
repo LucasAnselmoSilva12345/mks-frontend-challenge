@@ -1,12 +1,18 @@
-'use client';
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../scss/header.scss';
 import CartDrawerIcon from './cart-drawer';
 import { Sidebar } from './sidebar';
+import { useCart } from '../context/CartContext';
 
 export function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { cartItems } = useCart();
+
+  const [cartItemCount, setCartItemCount] = useState(0);
+
+  useEffect(() => {
+    setCartItemCount(cartItems.length);
+  }, [cartItems]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -29,7 +35,7 @@ export function Header() {
           onClick={toggleSidebar}
         >
           <CartDrawerIcon />
-          <span>0</span>
+          <span>{cartItemCount}</span>
         </button>
 
         <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
