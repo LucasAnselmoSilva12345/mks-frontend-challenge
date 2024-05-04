@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MKS Sistema - E-commerce de Produtos Eletrônicos
 
-## Getting Started
+## Descrição
+O MKS Sistema é um projeto de e-commerce dedicado à venda de produtos eletrônicos. Desenvolvido utilizando Next.js, TypeScript, SCSS, Lucide Icons e Sonner, o sistema oferece uma experiência de compra intuitiva e amigável para os usuários.
 
-First, run the development server:
+## Funcionalidades Principais
+- Visualização de produtos em um grid.
+- Adição de produtos ao carrinho de compras.
+- Exibição de informações do produto no carrinho.
+- Opção para selecionar a quantidade de itens desejados.
+- Cálculo do preço total do carrinho de compras.
+
+## Instalação e Execução
+1. Clone o repositório do projeto:
+
+```bash
+git clone git@github.com:LucasAnselmoSilva12345/mks-frontend-challenge.git
+```
+
+2. Instale as dependências do projeto:
+
+```bash
+cd mks-frontend-challenge
+npm install
+```
+
+3. Inicie a aplicação:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Acesse a aplicação em seu navegador através do endereço:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## API Utilizada
+Os dados dos produtos são obtidos através da seguinte API:
+[https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC](https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=ASC)
 
-## Learn More
+## Estrutura do Projeto
+- `pages/`: Contém as páginas da aplicação.
+- `components/`: Componentes reutilizáveis da aplicação.
+- `styles/`: Estilos globais e parciais da aplicação.
+- `public/`: Arquivos estáticos públicos.
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologias Utilizadas
+- Next.js: Framework React para renderização do lado do servidor.
+- TypeScript: Superset do JavaScript que adiciona tipagem estática.
+- SCSS: Pré-processador CSS para estilização.
+- Lucide Icons: Conjunto de ícones SVG.
+- Sonner: Biblioteca para formatação de valores monetários.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contribuindo
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Autor
+Este projeto foi desenvolvido por [Lucas Anselmo Moraes Da Silva](https://github.com/LucasAnselmoSilva12345).
