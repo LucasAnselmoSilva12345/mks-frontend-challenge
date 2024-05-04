@@ -8,22 +8,22 @@ interface SidebarProps {
   onClose: () => void;
 }
 
+interface ItemQuantity {
+  [key: number]: number;
+}
+
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { cartItems, removeFromCart } = useCart();
-
-  // Estado para controlar a quantidade de cada produto no carrinho
-  const [quantities, setQuantities] = useState<{ [key: number]: number }>({});
+  const [quantities, setQuantities] = useState<ItemQuantity>({});
 
   useEffect(() => {
-    // Inicializa as quantidades com base nos itens do carrinho
-    const initialQuantities = cartItems.reduce((acc, item) => {
+    const initialQuantities = cartItems.reduce((acc: ItemQuantity, item) => {
       acc[item.id] = 1;
       return acc;
     }, {});
     setQuantities(initialQuantities);
   }, [cartItems]);
 
-  // Função para aumentar a quantidade de um produto
   const increaseQuantity = (productId: number) => {
     setQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -31,7 +31,6 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     }));
   };
 
-  // Função para diminuir a quantidade de um produto
   const decreaseQuantity = (productId: number) => {
     if (quantities[productId] > 1) {
       setQuantities((prevQuantities) => ({
@@ -41,7 +40,6 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     }
   };
 
-  // Função para calcular o total dos preços dos produtos no carrinho
   const calculateTotalPrice = () => {
     const totalPrice = cartItems.reduce(
       (total, item) => total + item.price * quantities[item.id],
@@ -50,7 +48,6 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
     return totalPrice.toFixed(2);
   };
 
-  // Função para calcular o preço de um item com base na quantidade
   const calculateItemPrice = (itemPrice: number, quantity: number) => {
     return (itemPrice * quantity).toFixed(2);
   };
