@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { Toaster, toast } from 'sonner';
 
 interface Product {
   id: number;
@@ -29,14 +30,17 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
   const addToCart = (product: Product) => {
     setCartItems([...cartItems, product]);
+    toast.success('Produto adicionado ao carrinho');
   };
 
   const removeFromCart = (productId: number) => {
     setCartItems(cartItems.filter((item) => item.id !== productId));
+    toast.warning('Produto removido do carrinho');
   };
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+      <Toaster richColors position="top-center" />
       {children}
     </CartContext.Provider>
   );
